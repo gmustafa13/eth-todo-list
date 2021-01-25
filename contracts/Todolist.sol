@@ -10,6 +10,12 @@ contract todoList{
     }
     mapping(uint => task) public tasks;
 
+    event taskCreated (
+        uint id,
+        string content,
+        bool complete
+    );
+
     constructor() public{
       createTask("hi gulam");
     }
@@ -17,6 +23,7 @@ contract todoList{
     function createTask(string memory _content)public{
         taskCount ++;
         tasks[taskCount] = task(taskCount,_content,false);
+        emit taskCreated(taskCount, _content, false);
 
     }
 }
