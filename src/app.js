@@ -45,12 +45,11 @@ App = {
     loadAccount: async () => {
       // Set the current blockchain account
       App.account = web3.eth.accounts[0]
-      console.log(App.account)
     },
   
     loadContract: async () => {
       // Create a JavaScript version of the smart contract
-      const todoList = await $.getJSON('TodoList.json')
+      const todoList = await $.getJSON('todoList.json')
       App.contracts.TodoList = TruffleContract(todoList)
       App.contracts.TodoList.setProvider(App.web3Provider)
   
