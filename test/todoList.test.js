@@ -1,4 +1,4 @@
-const TodoList = artifacts.require('./Todolis.sol');
+const TodoList = artifacts.require("./todoList");
 
 contract('TodoList', (accounts) => {
     before(async () => {
